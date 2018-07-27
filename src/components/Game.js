@@ -1,5 +1,6 @@
 import React from 'react';
 import Guess from './Guess';
+import Button from './Button';
 
 import './game.css';
 
@@ -9,9 +10,8 @@ export default class Game extends React.Component {
     this.textInput = React.createRef();
     this.state = {
       temperature: "Make your Guess!",
-      answer: null,
+      answer: Math.floor((Math.random() * 100) + 1),
       tempColor: '#CA354D',
-      numOfguesses: 0,
       prevGuesses: []
     }
   }
@@ -42,6 +42,16 @@ export default class Game extends React.Component {
     }
   }
 
+  onClickNewGame = (e) => {
+    e.preventDefault();
+    this.setState({
+      answer: Math.floor((Math.random() * 100) + 1),
+      prevGuesses: [],
+      temperature: "Make your Guess!"
+    })
+    this.textInput.current.value = "";
+  }
+
   onGuessSubmit = (e) => {
     e.preventDefault();
     this.handleCurrentGuess();
@@ -49,14 +59,16 @@ export default class Game extends React.Component {
     this.textInput.current.value = ""; // reset form field
   }
 
-  componentWillMount() {
-    this.setState({ answer: Math.floor((Math.random() * 100) + 1) })
-  }
-
   render () {
     const previousGuesses = this.state.prevGuesses.map((guess, index) => (
       <li key={index} className="previous-guess">{guess} </li>
-    ))
+    ));
+
+    const newGameButton = {
+      position: 'fixed',
+      top: '15px',
+      right: '15px'
+    }
     if (!this.state.answer) {
       return null
     }
@@ -71,6 +83,7 @@ export default class Game extends React.Component {
             {previousGuesses}
           </ul>
         </div>
+        <Button text="New Game" customStyle={newGameButton} onClick={(e) => this.onClickNewGame(e)}/>
       </div>
     )
   }

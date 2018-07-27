@@ -1,0 +1,16 @@
+.guess {
+  background-color: #50597A;
+  border: 1px solid #20263C;
+  height: 32px;
+  font-size: 18px;
+  border-radius: 4px;
+  margin: 20px 0 10px 0;
+}
+
+.guess-submit {
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 5px 15px;
+  width: 120px;
+  font-size: 18px;
+}

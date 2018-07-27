@@ -1,0 +1,39 @@
+body {
+  height: 100vh;
+  background-color: #20263C;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.guess-box {
+  display: inline-block;
+  width: 300px;
+  background-color: #3A4362;
+}
+
+.guess-temperature {
+  margin: 0;
+  color: white;
+  font-weight: 400;
+  padding: 20px;
+}
+
+.header {
+  color: white;
+}
+
+.previous-guesses {
+  color: white;
+  list-style: none;
+  background-color: #22A8AA;
+  padding: 20px 0;
+  margin: 25px 0 0 0;
+}
+.previous-guesses li {
+  display: inline-block;
+  margin: 0 3px;
+  background-color: #3A4362;
+}

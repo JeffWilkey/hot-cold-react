@@ -2,6 +2,13 @@ language: node_js
 node_js: node
 cache:
   directories:
-    - node_modules
+  - node_modules
 env:
-  - CI=true
+- CI=true
+deploy:
+  provider: heroku
+  api_key:
+    secure: wsIvH/kIHfM4u5bQbkSzTow1A/gQ3X7EDkObxQLYj97wyO7K6fV+nq3gaQh6ANyMA06/5Mp3GI8xFmk7kuoXWspNmaU3niG6tFwxSaMYC9pwk9mVs781aclJFhZUgYabZpY7by+wS5wEq1wR0h0EIVl+F5j6ztYDRY3SH7h7G2iufhtMyk8TKUxA4aMJywB2zBArmdcbaPPe4oqNcKpZK6Ra8lo1M9xm9xYM1ig7DRwZ5miBrDUpnTba1grN6M1QXRBjkIgpMIAzuv/tG1rM0jCMwu/+ye+nODvD+P7trq2WOu8W6iRr5DGgw9wF6eTCumFbqzdCQdVTYtSFVD9K8UTWd4gQV71xu+/HjVnaLREBJG+1+5XwsJqXElgKkd7ePz0zLuiahysUud7geMjz+ZVEp6F/tri5+g3295Rvc2oCIuPIBDPMofwySfKc/bW1p8aCIjmGjTKSwqquDtNhFI3PyGH5yGc0xEsRGZto7A6Ci9C3mkaXmjOiMG/29MPdBtKfFjevhLs3PlcSOPyXQ2ARsHsdZHmUxGOM+r/nuT1NTYA9cryt1T7PyK6mPRvo3d/DlBectpMAPNY3qbYJsO5cjhODFMiBhBzo55JXygse3AWBapf1ErgRh5r+t3SIUDKQ2dDwFwAVVhAMrP35kghdoJYJ9kor3HQjCMoXD2M=
+  app: still-taiga-67003
+  on:
+    repo: JeffWilkey/hot-cold-react
